@@ -75,6 +75,27 @@ On Windows, double-click `run-server.bat` instead. Then:
 The [Quickstart](https://manohar-k-reddy.github.io/openline/start/quickstart/) walks through every
 step.
 
+## Development and tests
+
+Run the server's automated tests and TypeScript build from `server/`:
+
+```bash
+npm test
+npm run build
+```
+
+Build the Android app and run its protocol unit tests from `android/` (JDK 17+ and the Android
+SDK required):
+
+```bash
+./gradlew :protocol:test :app:assembleDebug
+```
+
+The documentation site can be built from `docs-site/` with `npm install` followed by
+`npm run build`. For a server integration check without a real phone, follow
+[`simulator/README.md`](simulator/README.md) to start the mock device and run its call-lifecycle
+test.
+
 ## Repository
 
 | Folder | What's in it |
